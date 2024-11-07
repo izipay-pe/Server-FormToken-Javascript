@@ -8,9 +8,10 @@ const app = express();
 //Habilitar bloqueo de CORS
 const cors = require('cors');
 const lista= ['http://localhost:5000','https://prueba55.herokuapp.com','http://127.0.0.1:5500'];
-app.use(cors({origin: lista}));
+app.use(cors({origin: lista})); //Se utiliza para permitir puertos especificos
+//app.use(cors()); //Se utiliza cuando quieres admitir todos los puertos
 
-//Confiuguracion del puerto
+//Configuracion del puerto
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
